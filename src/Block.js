@@ -16,7 +16,6 @@ class Block extends React.Component{
             <Input type="text" value={this.state.value} onChange={this.handleChange} />
         );
     }
-    
 }
 
 export default Block;
