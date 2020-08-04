@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '@material-ui/core/Input'
+import Checkbox from '@material-ui/core/Checkbox'
 
 class Block extends React.Component{
     constructor(props) {
@@ -13,7 +14,8 @@ class Block extends React.Component{
     }
     render(){
         return (
-            <Input type="text" value={this.state.value} onChange={this.handleChange} />
+                <Input type="text" value={this.state.value} onChange={this.handleChange}/>
+
         );
     }
 }
