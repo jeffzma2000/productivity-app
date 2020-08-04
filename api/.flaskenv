@@ -1,3 +1,5 @@
 #.flaskenv
 FLASK_APP=api.py
 FLASK_ENV=development
+ClientID=431376754384-4e26dd9v5e914jc95olbnq75prvdptuj.apps.googleusercontent.com
+ClientSecret=WYngYMqPNKoinmzUMJRZCvby

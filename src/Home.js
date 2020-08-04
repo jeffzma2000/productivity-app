@@ -6,6 +6,14 @@ import TodoList from './List';
 import LineTo from 'react-lineto'
 import Line from 'react-lineto'
 import { useState, useEffect } from 'react';
+import ApiCalendar from 'react-google-calendar-api';
+
+if (ApiCalendar.sign) {
+  ApiCalendar.listUpcomingEvents(10)
+    .then(({result}) => {
+      alert(result.items);
+    });
+};
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -25,18 +33,20 @@ function Home() {
       <Grid item>
         <Header />
       </Grid>
-      <p>The current time is {currentTime}.</p> 
+      <Grid item style={{minHeight: '10vh'}}>
+        <Typography>{currentTime}</Typography>
+      </Grid>
       <Grid item container>
-        <Grid item xs={0} sm={1} />
-        <Grid item container xs={12} sm={10}>
-          <Grid item xs={4} justify="center">
+        <Grid item xs={1} />
+        <Grid item container xs={10} >
+          <Grid item container sm={4} justify="center">
             <Typography variant="h5" color="primary" align="center">Today's Priorities</Typography>
             <TodoList number={3} labels={['1.', '2.', '3.']}/>
             <Typography variant="h5" color="primary" align="center">Task Dump</Typography>
             <TodoList number={10}/>
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={7} justify="center">
+          <Grid item sm={1}></Grid>
+          <Grid item sm={7} justify="center">
             <Grid container direction="row">
               <Grid xs={6}>
                 <Typography variant="h5" color="primary" align="center" >:00</Typography>
@@ -49,7 +59,7 @@ function Home() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={0} sm={1} />
+        <Grid item xs={1} />
       </Grid>
     </Grid>
   );

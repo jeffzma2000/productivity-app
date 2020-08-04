@@ -19,10 +19,10 @@ function TodoList(props){
     const labels = props.labels
     return(
         <Grid container>
-            <Grid item container direction ="column" xs={2}>
+            <Grid item container direction ="column" xs={3} sm={2}>
                 {labels ? labels.map(label => <Input className={classes.root} type="text" value={label} disabled={true} disableUnderline={true}/>) : null}
             </Grid>
-            <Grid item xs={10}>
+            <Grid item xs={9} sm={10}>
                 <Paper elevation={3}>
                     <Grid container direction="column">
                         {range.map(()=><Block />)}
