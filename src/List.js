@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Block from './Block'
 import { makeStyles } from '@material-ui/core/styles'
 import Input from '@material-ui/core/Input'
+import { useState, useEffect } from 'react';
 
 const useStyles = makeStyles({
     root: {
@@ -14,19 +15,15 @@ const useStyles = makeStyles({
 });
 
 function TodoList(props){
+
     const classes = useStyles(props)
     const range = [...Array(props.number).keys()]
     const labels = props.labels
     return(
-        <Grid container>
-            <Grid item container direction ="column" xs={3} sm={2}>
-                {labels ? labels.map(label => <Input className={classes.root} type="text" value={label} disabled={true} disableUnderline={true}/>) : null}
-            </Grid>
-            <Grid item xs={9} sm={10}>
+        <Grid item container xs={12}>
+            <Grid item xs={12}>
                 <Paper elevation={3}>
-                    <Grid container direction="column">
-                        {range.map((i)=><Block name={props.name} index={i}/>)}
-                    </Grid>
+                    {labels ? (labels).map((label, i)=><Block name={props.name} label={label} check={!props.checks} index={i}/>):range.map((i)=><Block name={props.name} check={!props.checks} index={i}/>)}
                 </Paper>
             </Grid>
         </Grid>
