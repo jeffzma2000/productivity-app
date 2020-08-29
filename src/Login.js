@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid'
 import { GoogleLogin } from 'react-google-login'
+import GoogleBtn from './GoogleBtn'
 
 
 function Login(props) {
@@ -15,14 +16,7 @@ function Login(props) {
                 <Grid item xs={4}>
                     <Grid container alignItems="center" justify="center" style={{ minHeight: '20vh' }}>
                         <Grid item>
-                            <GoogleLogin 
-                            clientId="431376754384-4e26dd9v5e914jc95olbnq75prvdptuj.apps.googleusercontent.com"
-                            onSuccess={responseGoogle}
-                            onFailure={responseGoogle}
-                            cookiePolicy={'single_host_origin'}
-                            uxMode='redirect'
-                            redirectUri="http://localhost:3000/"
-                            />
+                            <GoogleBtn />
                         </Grid>
                     </Grid>
                 </Grid>

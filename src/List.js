@@ -25,7 +25,7 @@ function TodoList(props){
             <Grid item xs={9} sm={10}>
                 <Paper elevation={3}>
                     <Grid container direction="column">
-                        {range.map(()=><Block />)}
+                        {range.map((i)=><Block name={props.name} index={i}/>)}
                     </Grid>
                 </Paper>
             </Grid>

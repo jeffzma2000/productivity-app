@@ -31,19 +31,18 @@ function Home() {
   return (
     <Grid direction="column">
       <Grid item>
-        <Header />
+        <Header time={currentTime}/>
       </Grid>
       <Grid item style={{minHeight: '10vh'}}>
-        <Typography>{currentTime}</Typography>
       </Grid>
       <Grid item container>
         <Grid item xs={1} />
         <Grid item container xs={10} >
           <Grid item container sm={4} justify="center">
             <Typography variant="h5" color="primary" align="center">Today's Priorities</Typography>
-            <TodoList number={3} labels={['1.', '2.', '3.']}/>
+            <TodoList number={3} name="priority" labels={['1.', '2.', '3.']}/>
             <Typography variant="h5" color="primary" align="center">Task Dump</Typography>
-            <TodoList number={10}/>
+            <TodoList name="dump" number={10}/>
           </Grid>
           <Grid item sm={1}></Grid>
           <Grid item sm={7} justify="center">
